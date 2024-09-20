@@ -1,0 +1,14 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(167, 165, 165, 0.87);
+  background-color: #c5ababad;
+}
+
+.Body{
+  background-color: transparent;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 5%;
+  height: auto;
+}
