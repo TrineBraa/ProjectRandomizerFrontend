@@ -10,6 +10,7 @@ import Projects from './Pages/Projects.jsx';
 import LongProject from './Pages/LongProjects.jsx';
 import ShortProject from './Pages/ShortProject.jsx';
 import RandomProject from './Pages/RandomProject.jsx';
+import getData from '../API.jsx';
 
 function App() {
 
@@ -47,19 +48,6 @@ function App() {
 }
 
 
-async function getData() {
-  const url = "https://localhost:7023/Project";
-  try {
-    const response = await fetch(url, {headers: {'Access-Control-Allow-Origin': 'https://localhost:7023'}});
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
 
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.error(error.message);
-  }
-}
 
 export default App

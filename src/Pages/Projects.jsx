@@ -1,6 +1,5 @@
 
 import ProjectList from "../components/ProjectList";
-import CreateProjectModel from "../components/CreateProjectModel";
 import { Col, Row, Button } from "react-bootstrap";
 
 const Projects = () => {
@@ -9,6 +8,7 @@ const Projects = () => {
 
     return (
         <div>
+            <br/>
             <Row>
                 <Col>
                     <h1>All Projects</h1>
@@ -22,7 +22,7 @@ const Projects = () => {
 
 
             <ProjectList />
-            <CreateProjectModel />
+            
         </div>
     )
 }
