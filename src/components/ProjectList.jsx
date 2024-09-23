@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
-import getData from "../../API";
-
-function ProjectList(){
-
-    const[projects, setProjects] = useState([]);
+import "../Css/project.css";
+import DeleteBtn from "./DeleteBtn";
+import PropTypes from "prop-types";
 
 
-    useEffect( () => {
-        getData().then((result) => {  //Kaller til API å får 'result' som data
-            setProjects(result);
-            console.log(result);
+const ProjectList = ({projects, onDelete}) => {
+
+    // const[projects, setProjects] = useState([]);
+
+
+    // useEffect( () => {
+    //     getData().then((result) => {  //Kaller til API å får 'result' som data
+    //         setProjects(result);
+    //         console.log(result);
             
-        });
-    }, []); //Setter results inn i projects arrayet.
+    //     });
+    // }, []); //Setter results inn i projects arrayet.
 
 
    //another way of writing out the text above
@@ -21,21 +23,34 @@ function ProjectList(){
     //       const result = await getData();
     //     }
     //     });
+
+   
+
    
     return(
-        <div>
-            
-            <ul>
-                {projects.map((project, index) => (
-                    <li key = {index}>{project.name} {project.description} {project.projectSize}</li> //Display each project name
+        <>
+                {projects.map((project) => (    
+                    <tr className="Data-Row" key = {project.id}>
+                        <th scope="row">{project.id}</th>
+                        <td>{project.name}</td>
+                        <td>{project.description}</td>
+                        <td>{project.projectSize}</td>
+                        <td>
+                        <DeleteBtn projectId={project.id} onDelete={onDelete}/>
+                        </td>
+                    </tr>
+                     //Display each project information
                     ))}
-            </ul>
-        </div>
+           
+        </>
     )
+};
 
+ProjectList.propTypes = {
+    projects: PropTypes.array.isRequired,
+    onDelete: PropTypes.func.isRequired,
+};
 
-
-}
 
 export default ProjectList;
 

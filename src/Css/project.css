@@ -1,0 +1,25 @@
+.allProject-Container{
+    background-color: transparent;
+    width: 90vw;
+    margin-left: -15%;
+    align-content: center;
+}
+.title-project{
+    justify-self: center;
+}
+
+.ButtonContainer{
+    /* margin-right: -25%; */
+    margin-left: auto;
+}
+
+.table{
+    margin-top: 2%;
+    background-color: transparent;
+    width: 90vw;
+}
+
+.randomProject-Container{
+    text-align: center;
+    padding-top: 2%;
+}

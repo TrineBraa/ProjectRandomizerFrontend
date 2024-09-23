@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx';
 import {BrowserRouter, Route, Link, Routes} from 'react-router-dom';
 import{ Container, Navbar, Nav }from 'react-bootstrap';
 
-import Main from './Pages/Main.jsx';
+
 import Projects from './Pages/Projects.jsx';
 import LongProject from './Pages/LongProjects.jsx';
 import ShortProject from './Pages/ShortProject.jsx';
@@ -20,7 +20,7 @@ function App() {
   <Container className='containerpage'>
     <BrowserRouter>
       <Navbar className='TopBar' bg="dark" variant="dark">
-        <Navbar.Brand as={Link} to ="/"><Header/></Navbar.Brand>
+        <Navbar.Brand ><Header/></Navbar.Brand>
         <Nav className="mr-auto">
         <Nav.Link as={Link} to="/Projects">All Projects</Nav.Link>
         <Nav.Link as={Link} to="/LongProject">Long Projects</Nav.Link>
@@ -30,7 +30,7 @@ function App() {
       </Navbar>
       
       <Routes>
-        <Route path="/" element={<Main />}/>
+        <Route path="/" element={<Projects />}/>
         <Route path="/Projects" element={<Projects />}/>
         <Route path="/LongProject" element={<LongProject />}/>
         <Route path="/ShortProject" element={<ShortProject />}/>
